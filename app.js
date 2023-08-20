@@ -1,7 +1,10 @@
 import express from "express";
+const app = express();
 const port = 8080;
 
-const app = express();
+//#region SERVIR CONTENIDO ESTATICO
+app.use(express.static("public"));
+//#endregion
 
 app.get("/", (req, res) => {
   res.send("hello");
